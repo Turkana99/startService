@@ -1,0 +1,8 @@
+.errorMessage p{
+    color: red!important;
+    padding-top: 5px!important;
+}
+
+ input.ng-invalid.ng-touched {
+    border: 1px solid red!important;
+}

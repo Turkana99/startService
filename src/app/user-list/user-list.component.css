@@ -1,0 +1,11 @@
+.mat-column-id {
+    max-width: 3% !important;
+  }
+
+  .mat-column-title{
+    max-width: 35% !important;
+  }
+::ng-deep .mat-mdc-cell .mdc-data-table__cell .cdk-cell .cdk-column-id .mat-column-id .ng-star-inserted {
+    width: 10px !important;
+    flex: none;
+}

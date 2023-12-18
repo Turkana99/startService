@@ -1,0 +1,5 @@
+<h2>Subject Examples</h2>
+<input type="text" [(ngModel)]="sendsData" name="sendsData">
+<div>{{sendsData | uppercase }}</div>
+<button  (click)="sendData(sendsData)">Məlumatı Göndər</button>
+<div *ngFor="let receivedData of recievedData">{{ receivedData | uppercase }}</div>

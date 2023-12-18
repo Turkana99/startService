@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 pt-5">
+      <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div id="user-data" ngModelGroup>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+              ngModel
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+          <button
+            class="btn btn-default"
+            type="button"
+            (click)="suggestUserName()"
+          >
+            Suggest an Username
+          </button>
+          <div class="form-group pt-4">
+            <label for="email">Mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              ngModel
+              required
+              [ngModelOptions]="{ standalone: true }"
+              email
+              #email="ngModel"
+            />
+            <span *ngIf="!email.valid && email.touched">
+              Please enter valid email address</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select name="secret" id="secret" class="form-control">
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form> -->
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control username"
+              formControlName="username"
+            />
+            <div class="errorMessage" *ngIf="formSubmitted">
+              <p *ngIf="userForm.get('username').invalid">Please enter correct username!</p>
+            </div>
+          </div>
+          <button
+            class="btn btn-default"
+            type="button"
+            (click)="suggestUserName()"
+          >
+            Suggest an Username
+          </button>
+          <div class="form-group pt-4">
+            <label for="email">Mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              formControlName="email"
+            />
+
+            <label for="email">
+              <input
+                type="radio"
+                value="male"
+                formControlName="gender"
+              /> Male</label
+            >
+
+            <label for="email" class="pt-3 ps-3">
+              <input
+                type="radio"
+                value="female"
+                formControlName="gender"
+              /> Female</label
+            >
+
+            <!-- <span *ngIf="!email.valid && email.touched">
+              Please enter valid email address</span
+            > -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select
+            name="secret"
+            id="secret"
+            class="form-control"
+            formControlName="secret"
+          >
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
